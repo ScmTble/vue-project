@@ -16,7 +16,9 @@ jobs:
         run: echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
  
       - name: Build
-        run: bun run build
+        run: |
+          bun install -g npm-run-all
+          bun run build
 
       - uses: ryand56/r2-upload-action@latest
         with:
