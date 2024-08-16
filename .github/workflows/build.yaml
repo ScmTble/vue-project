@@ -6,7 +6,7 @@ on:
 permissions: write-all
 
 jobs:
-  comment:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
  
       - name: Build
         run: |
-          bun install -g npm-run-all
+          bun install
           bun run build
 
       - uses: ryand56/r2-upload-action@latest
